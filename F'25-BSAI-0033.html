@@ -1,0 +1,341 @@
+<html>
+<head>
+<title>P4AI Assignment #01.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #7a7e85;}
+.s1 { color: #bcbec4;}
+.s2 { color: #cf8e6d;}
+.s3 { color: #bcbec4;}
+.s4 { color: #2aacb8;}
+.s5 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#191a1c">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+P4AI Assignment #01.py</font>
+</center></td></tr></table>
+<pre><span class="s0"># QUESTION 1</span>
+<span class="s0"># Student Result Management System</span>
+
+<span class="s2">def </span><span class="s1">student_result</span><span class="s3">():</span>
+    <span class="s1">students </span><span class="s3">= []</span>
+
+    <span class="s2">for </span><span class="s1">i </span><span class="s2">in </span><span class="s1">range</span><span class="s3">(</span><span class="s4">5</span><span class="s3">):</span>
+        <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;</span><span class="s2">\n</span><span class="s5">Student&quot;</span><span class="s3">, </span><span class="s1">i </span><span class="s3">+ </span><span class="s4">1</span><span class="s3">)</span>
+        <span class="s1">name </span><span class="s3">= </span><span class="s1">input</span><span class="s3">(</span><span class="s5">&quot;Enter name: &quot;</span><span class="s3">)</span>
+        <span class="s1">roll </span><span class="s3">= </span><span class="s1">input</span><span class="s3">(</span><span class="s5">&quot;Enter roll number: &quot;</span><span class="s3">)</span>
+
+        <span class="s1">python </span><span class="s3">= </span><span class="s1">float</span><span class="s3">(</span><span class="s1">input</span><span class="s3">(</span><span class="s5">&quot;Enter Python marks: &quot;</span><span class="s3">))</span>
+        <span class="s1">ai </span><span class="s3">= </span><span class="s1">float</span><span class="s3">(</span><span class="s1">input</span><span class="s3">(</span><span class="s5">&quot;Enter Artificial Intelligence marks: &quot;</span><span class="s3">))</span>
+        <span class="s1">math </span><span class="s3">= </span><span class="s1">float</span><span class="s3">(</span><span class="s1">input</span><span class="s3">(</span><span class="s5">&quot;Enter Mathematics marks: &quot;</span><span class="s3">))</span>
+
+        <span class="s1">student </span><span class="s3">= {</span>
+            <span class="s5">&quot;name&quot;</span><span class="s3">: </span><span class="s1">name</span><span class="s3">,</span>
+            <span class="s5">&quot;roll&quot;</span><span class="s3">: </span><span class="s1">roll</span><span class="s3">,</span>
+            <span class="s5">&quot;python&quot;</span><span class="s3">: </span><span class="s1">python</span><span class="s3">,</span>
+            <span class="s5">&quot;ai&quot;</span><span class="s3">: </span><span class="s1">ai</span><span class="s3">,</span>
+            <span class="s5">&quot;math&quot;</span><span class="s3">: </span><span class="s1">math</span>
+        <span class="s3">}</span>
+
+        <span class="s1">students</span><span class="s3">.</span><span class="s1">append</span><span class="s3">(</span><span class="s1">student</span><span class="s3">)</span>
+
+    <span class="s2">def </span><span class="s1">calculate</span><span class="s3">(</span><span class="s1">student</span><span class="s3">):</span>
+        <span class="s1">total </span><span class="s3">= </span><span class="s1">student</span><span class="s3">[</span><span class="s5">&quot;python&quot;</span><span class="s3">] + </span><span class="s1">student</span><span class="s3">[</span><span class="s5">&quot;ai&quot;</span><span class="s3">] + </span><span class="s1">student</span><span class="s3">[</span><span class="s5">&quot;math&quot;</span><span class="s3">]</span>
+        <span class="s1">percentage </span><span class="s3">= </span><span class="s1">total </span><span class="s3">/ </span><span class="s4">3</span>
+
+        <span class="s2">if </span><span class="s1">percentage </span><span class="s3">&gt;= </span><span class="s4">80</span><span class="s3">:</span>
+            <span class="s1">grade </span><span class="s3">= </span><span class="s5">&quot;A&quot;</span>
+        <span class="s2">elif </span><span class="s1">percentage </span><span class="s3">&gt;= </span><span class="s4">70</span><span class="s3">:</span>
+            <span class="s1">grade </span><span class="s3">= </span><span class="s5">&quot;B&quot;</span>
+        <span class="s2">elif </span><span class="s1">percentage </span><span class="s3">&gt;= </span><span class="s4">60</span><span class="s3">:</span>
+            <span class="s1">grade </span><span class="s3">= </span><span class="s5">&quot;C&quot;</span>
+        <span class="s2">elif </span><span class="s1">percentage </span><span class="s3">&gt;= </span><span class="s4">50</span><span class="s3">:</span>
+            <span class="s1">grade </span><span class="s3">= </span><span class="s5">&quot;D&quot;</span>
+        <span class="s2">else</span><span class="s3">:</span>
+            <span class="s1">grade </span><span class="s3">= </span><span class="s5">&quot;F&quot;</span>
+
+        <span class="s2">return </span><span class="s1">total</span><span class="s3">, </span><span class="s1">percentage</span><span class="s3">, </span><span class="s1">grade</span>
+
+    <span class="s1">result </span><span class="s3">= </span><span class="s5">&quot;&quot;</span>
+
+    <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;</span><span class="s2">\n</span><span class="s5">----- Student Results -----&quot;</span><span class="s3">)</span>
+
+    <span class="s1">highest </span><span class="s3">= </span><span class="s1">students</span><span class="s3">[</span><span class="s4">0</span><span class="s3">]</span>
+
+    <span class="s2">for </span><span class="s1">student </span><span class="s2">in </span><span class="s1">students</span><span class="s3">:</span>
+        <span class="s1">total</span><span class="s3">, </span><span class="s1">percentage</span><span class="s3">, </span><span class="s1">grade </span><span class="s3">= </span><span class="s1">calculate</span><span class="s3">(</span><span class="s1">student</span><span class="s3">)</span>
+
+        <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;</span><span class="s2">\n</span><span class="s5">Name:&quot;</span><span class="s3">, </span><span class="s1">student</span><span class="s3">[</span><span class="s5">&quot;name&quot;</span><span class="s3">])</span>
+        <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;Roll Number:&quot;</span><span class="s3">, </span><span class="s1">student</span><span class="s3">[</span><span class="s5">&quot;roll&quot;</span><span class="s3">])</span>
+        <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;Total Marks:&quot;</span><span class="s3">, </span><span class="s1">total</span><span class="s3">)</span>
+        <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;Percentage:&quot;</span><span class="s3">, </span><span class="s1">round</span><span class="s3">(</span><span class="s1">percentage</span><span class="s3">, </span><span class="s4">2</span><span class="s3">))</span>
+        <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;Grade:&quot;</span><span class="s3">, </span><span class="s1">grade</span><span class="s3">)</span>
+
+        <span class="s1">result </span><span class="s3">+= </span><span class="s5">&quot;Name: &quot; </span><span class="s3">+ </span><span class="s1">student</span><span class="s3">[</span><span class="s5">&quot;name&quot;</span><span class="s3">] + </span><span class="s5">&quot;</span><span class="s2">\n</span><span class="s5">&quot;</span>
+        <span class="s1">result </span><span class="s3">+= </span><span class="s5">&quot;Roll Number: &quot; </span><span class="s3">+ </span><span class="s1">student</span><span class="s3">[</span><span class="s5">&quot;roll&quot;</span><span class="s3">] + </span><span class="s5">&quot;</span><span class="s2">\n</span><span class="s5">&quot;</span>
+        <span class="s1">result </span><span class="s3">+= </span><span class="s5">&quot;Total Marks: &quot; </span><span class="s3">+ </span><span class="s1">str</span><span class="s3">(</span><span class="s1">total</span><span class="s3">) + </span><span class="s5">&quot;</span><span class="s2">\n</span><span class="s5">&quot;</span>
+        <span class="s1">result </span><span class="s3">+= </span><span class="s5">&quot;Percentage: &quot; </span><span class="s3">+ </span><span class="s1">str</span><span class="s3">(</span><span class="s1">round</span><span class="s3">(</span><span class="s1">percentage</span><span class="s3">, </span><span class="s4">2</span><span class="s3">)) + </span><span class="s5">&quot;</span><span class="s2">\n</span><span class="s5">&quot;</span>
+        <span class="s1">result </span><span class="s3">+= </span><span class="s5">&quot;Grade: &quot; </span><span class="s3">+ </span><span class="s1">grade </span><span class="s3">+ </span><span class="s5">&quot;</span><span class="s2">\n\n</span><span class="s5">&quot;</span>
+
+        <span class="s2">if </span><span class="s1">percentage </span><span class="s3">&gt; </span><span class="s1">calculate</span><span class="s3">(</span><span class="s1">highest</span><span class="s3">)[</span><span class="s4">1</span><span class="s3">]:</span>
+            <span class="s1">highest </span><span class="s3">= </span><span class="s1">student</span>
+
+    <span class="s1">highest_percentage </span><span class="s3">= </span><span class="s1">calculate</span><span class="s3">(</span><span class="s1">highest</span><span class="s3">)[</span><span class="s4">1</span><span class="s3">]</span>
+
+    <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;</span><span class="s2">\n</span><span class="s5">Highest Percentage:&quot;</span><span class="s3">)</span>
+    <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;Name:&quot;</span><span class="s3">, </span><span class="s1">highest</span><span class="s3">[</span><span class="s5">&quot;name&quot;</span><span class="s3">])</span>
+    <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;Percentage:&quot;</span><span class="s3">, </span><span class="s1">round</span><span class="s3">(</span><span class="s1">highest_percentage</span><span class="s3">, </span><span class="s4">2</span><span class="s3">))</span>
+
+    <span class="s1">result </span><span class="s3">+= </span><span class="s5">&quot;Highest Percentage Student: &quot; </span><span class="s3">+ </span><span class="s1">highest</span><span class="s3">[</span><span class="s5">&quot;name&quot;</span><span class="s3">] + </span><span class="s5">&quot;</span><span class="s2">\n</span><span class="s5">&quot;</span>
+    <span class="s1">result </span><span class="s3">+= </span><span class="s5">&quot;Percentage: &quot; </span><span class="s3">+ </span><span class="s1">str</span><span class="s3">(</span><span class="s1">round</span><span class="s3">(</span><span class="s1">highest_percentage</span><span class="s3">, </span><span class="s4">2</span><span class="s3">)) + </span><span class="s5">&quot;</span><span class="s2">\n</span><span class="s5">&quot;</span>
+
+    <span class="s2">with </span><span class="s1">open</span><span class="s3">(</span><span class="s5">&quot;results.txt&quot;</span><span class="s3">, </span><span class="s5">&quot;w&quot;</span><span class="s3">) </span><span class="s2">as </span><span class="s1">file</span><span class="s3">:</span>
+        <span class="s1">file</span><span class="s3">.</span><span class="s1">write</span><span class="s3">(</span><span class="s1">result</span><span class="s3">)</span>
+
+    <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;</span><span class="s2">\n</span><span class="s5">Results saved in results.txt&quot;</span><span class="s3">)</span>
+
+
+<span class="s0">#QUESTION 2</span>
+<span class="s2">def </span><span class="s1">sentence_analysis</span><span class="s3">():</span>
+    <span class="s1">sentence </span><span class="s3">= </span><span class="s1">input</span><span class="s3">(</span><span class="s5">&quot;</span><span class="s2">\n</span><span class="s5">Enter a sentence: &quot;</span><span class="s3">)</span>
+
+    <span class="s1">words </span><span class="s3">= </span><span class="s1">sentence</span><span class="s3">.</span><span class="s1">split</span><span class="s3">()</span>
+    <span class="s1">unique_words </span><span class="s3">= </span><span class="s1">set</span><span class="s3">(</span><span class="s1">words</span><span class="s3">)</span>
+
+    <span class="s1">longest </span><span class="s3">= </span><span class="s1">max</span><span class="s3">(</span><span class="s1">words</span><span class="s3">, </span><span class="s1">key</span><span class="s3">=</span><span class="s1">len</span><span class="s3">)</span>
+    <span class="s1">shortest </span><span class="s3">= </span><span class="s1">min</span><span class="s3">(</span><span class="s1">words</span><span class="s3">, </span><span class="s1">key</span><span class="s3">=</span><span class="s1">len</span><span class="s3">)</span>
+
+    <span class="s1">vowels </span><span class="s3">= </span><span class="s4">0</span>
+    <span class="s2">for </span><span class="s1">letter </span><span class="s2">in </span><span class="s1">sentence</span><span class="s3">.</span><span class="s1">lower</span><span class="s3">():</span>
+        <span class="s2">if </span><span class="s1">letter </span><span class="s2">in </span><span class="s5">&quot;aeiou&quot;</span><span class="s3">:</span>
+            <span class="s1">vowels </span><span class="s3">+= </span><span class="s4">1</span>
+
+    <span class="s1">analysis </span><span class="s3">= </span><span class="s5">&quot;&quot;</span>
+    <span class="s1">analysis </span><span class="s3">+= </span><span class="s5">&quot;Total words: &quot; </span><span class="s3">+ </span><span class="s1">str</span><span class="s3">(</span><span class="s1">len</span><span class="s3">(</span><span class="s1">words</span><span class="s3">)) + </span><span class="s5">&quot;</span><span class="s2">\n</span><span class="s5">&quot;</span>
+    <span class="s1">analysis </span><span class="s3">+= </span><span class="s5">&quot;Total characters: &quot; </span><span class="s3">+ </span><span class="s1">str</span><span class="s3">(</span><span class="s1">len</span><span class="s3">(</span><span class="s1">sentence</span><span class="s3">)) + </span><span class="s5">&quot;</span><span class="s2">\n</span><span class="s5">&quot;</span>
+    <span class="s1">analysis </span><span class="s3">+= </span><span class="s5">&quot;Longest word: &quot; </span><span class="s3">+ </span><span class="s1">longest </span><span class="s3">+ </span><span class="s5">&quot;</span><span class="s2">\n</span><span class="s5">&quot;</span>
+    <span class="s1">analysis </span><span class="s3">+= </span><span class="s5">&quot;Shortest word: &quot; </span><span class="s3">+ </span><span class="s1">shortest </span><span class="s3">+ </span><span class="s5">&quot;</span><span class="s2">\n</span><span class="s5">&quot;</span>
+    <span class="s1">analysis </span><span class="s3">+= </span><span class="s5">&quot;Number of vowels: &quot; </span><span class="s3">+ </span><span class="s1">str</span><span class="s3">(</span><span class="s1">vowels</span><span class="s3">) + </span><span class="s5">&quot;</span><span class="s2">\n</span><span class="s5">&quot;</span>
+    <span class="s1">analysis </span><span class="s3">+= </span><span class="s5">&quot;Unique words: &quot; </span><span class="s3">+ </span><span class="s1">str</span><span class="s3">(</span><span class="s1">unique_words</span><span class="s3">) + </span><span class="s5">&quot;</span><span class="s2">\n</span><span class="s5">&quot;</span>
+    <span class="s1">analysis </span><span class="s3">+= </span><span class="s5">&quot;Alphabetical order: &quot; </span><span class="s3">+ </span><span class="s1">str</span><span class="s3">(</span><span class="s1">sorted</span><span class="s3">(</span><span class="s1">unique_words</span><span class="s3">)) + </span><span class="s5">&quot;</span><span class="s2">\n</span><span class="s5">&quot;</span>
+
+    <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;</span><span class="s2">\n</span><span class="s5">----- Sentence Analysis -----&quot;</span><span class="s3">)</span>
+    <span class="s1">print</span><span class="s3">(</span><span class="s1">analysis</span><span class="s3">)</span>
+
+    <span class="s2">with </span><span class="s1">open</span><span class="s3">(</span><span class="s5">&quot;word_analysis.txt&quot;</span><span class="s3">, </span><span class="s5">&quot;w&quot;</span><span class="s3">) </span><span class="s2">as </span><span class="s1">file</span><span class="s3">:</span>
+        <span class="s1">file</span><span class="s3">.</span><span class="s1">write</span><span class="s3">(</span><span class="s1">analysis</span><span class="s3">)</span>
+
+    <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;Analysis saved in word_analysis.txt&quot;</span><span class="s3">)</span>
+
+
+<span class="s0"># QUESTION 3</span>
+<span class="s2">def </span><span class="s1">shopping</span><span class="s3">():</span>
+    <span class="s1">products </span><span class="s3">= {}</span>
+
+    <span class="s2">for </span><span class="s1">i </span><span class="s2">in </span><span class="s1">range</span><span class="s3">(</span><span class="s4">5</span><span class="s3">):</span>
+        <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;</span><span class="s2">\n</span><span class="s5">Product&quot;</span><span class="s3">, </span><span class="s1">i </span><span class="s3">+ </span><span class="s4">1</span><span class="s3">)</span>
+        <span class="s1">name </span><span class="s3">= </span><span class="s1">input</span><span class="s3">(</span><span class="s5">&quot;Enter product name: &quot;</span><span class="s3">)</span>
+        <span class="s1">price </span><span class="s3">= </span><span class="s1">float</span><span class="s3">(</span><span class="s1">input</span><span class="s3">(</span><span class="s5">&quot;Enter price: &quot;</span><span class="s3">))</span>
+        <span class="s1">quantity </span><span class="s3">= </span><span class="s1">int</span><span class="s3">(</span><span class="s1">input</span><span class="s3">(</span><span class="s5">&quot;Enter quantity: &quot;</span><span class="s3">))</span>
+
+        <span class="s1">products</span><span class="s3">[</span><span class="s1">name</span><span class="s3">] = {</span>
+            <span class="s5">&quot;price&quot;</span><span class="s3">: </span><span class="s1">price</span><span class="s3">,</span>
+            <span class="s5">&quot;quantity&quot;</span><span class="s3">: </span><span class="s1">quantity</span>
+        <span class="s3">}</span>
+
+    <span class="s2">def </span><span class="s1">calculate_bill</span><span class="s3">():</span>
+        <span class="s1">total </span><span class="s3">= </span><span class="s4">0</span>
+
+        <span class="s2">for </span><span class="s1">name </span><span class="s2">in </span><span class="s1">products</span><span class="s3">:</span>
+            <span class="s1">price </span><span class="s3">= </span><span class="s1">products</span><span class="s3">[</span><span class="s1">name</span><span class="s3">][</span><span class="s5">&quot;price&quot;</span><span class="s3">]</span>
+            <span class="s1">quantity </span><span class="s3">= </span><span class="s1">products</span><span class="s3">[</span><span class="s1">name</span><span class="s3">][</span><span class="s5">&quot;quantity&quot;</span><span class="s3">]</span>
+            <span class="s1">product_total </span><span class="s3">= </span><span class="s1">price </span><span class="s3">* </span><span class="s1">quantity</span>
+
+            <span class="s1">print</span><span class="s3">(</span><span class="s1">name</span><span class="s3">, </span><span class="s5">&quot;=&quot;</span><span class="s3">, </span><span class="s1">product_total</span><span class="s3">)</span>
+            <span class="s1">total </span><span class="s3">+= </span><span class="s1">product_total</span>
+
+        <span class="s2">return </span><span class="s1">total</span>
+
+    <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;</span><span class="s2">\n</span><span class="s5">----- Shopping Bill -----&quot;</span><span class="s3">)</span>
+    <span class="s1">total </span><span class="s3">= </span><span class="s1">calculate_bill</span><span class="s3">()</span>
+
+    <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;Total Bill:&quot;</span><span class="s3">, </span><span class="s1">total</span><span class="s3">)</span>
+
+    <span class="s1">discount </span><span class="s3">= </span><span class="s4">0</span>
+
+    <span class="s2">if </span><span class="s1">total </span><span class="s3">&gt; </span><span class="s4">10000</span><span class="s3">:</span>
+        <span class="s1">discount </span><span class="s3">= </span><span class="s1">total </span><span class="s3">* </span><span class="s4">0.10</span>
+        <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;Discount:&quot;</span><span class="s3">, </span><span class="s1">discount</span><span class="s3">)</span>
+
+    <span class="s1">final_bill </span><span class="s3">= </span><span class="s1">total </span><span class="s3">- </span><span class="s1">discount</span>
+    <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;Final Bill:&quot;</span><span class="s3">, </span><span class="s1">final_bill</span><span class="s3">)</span>
+
+    <span class="s1">expensive </span><span class="s3">= </span><span class="s5">&quot;&quot;</span>
+    <span class="s1">highest_price </span><span class="s3">= </span><span class="s4">0</span>
+
+    <span class="s2">for </span><span class="s1">name </span><span class="s2">in </span><span class="s1">products</span><span class="s3">:</span>
+        <span class="s1">product_total </span><span class="s3">= </span><span class="s1">products</span><span class="s3">[</span><span class="s1">name</span><span class="s3">][</span><span class="s5">&quot;price&quot;</span><span class="s3">] * </span><span class="s1">products</span><span class="s3">[</span><span class="s1">name</span><span class="s3">][</span><span class="s5">&quot;quantity&quot;</span><span class="s3">]</span>
+
+        <span class="s2">if </span><span class="s1">product_total </span><span class="s3">&gt; </span><span class="s1">highest_price</span><span class="s3">:</span>
+            <span class="s1">highest_price </span><span class="s3">= </span><span class="s1">product_total</span>
+            <span class="s1">expensive </span><span class="s3">= </span><span class="s1">name</span>
+
+    <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;Most Expensive Product:&quot;</span><span class="s3">, </span><span class="s1">expensive</span><span class="s3">)</span>
+
+    <span class="s2">with </span><span class="s1">open</span><span class="s3">(</span><span class="s5">&quot;bill.txt&quot;</span><span class="s3">, </span><span class="s5">&quot;w&quot;</span><span class="s3">) </span><span class="s2">as </span><span class="s1">file</span><span class="s3">:</span>
+        <span class="s1">file</span><span class="s3">.</span><span class="s1">write</span><span class="s3">(</span><span class="s5">&quot;Shopping Bill</span><span class="s2">\n</span><span class="s5">&quot;</span><span class="s3">)</span>
+        <span class="s1">file</span><span class="s3">.</span><span class="s1">write</span><span class="s3">(</span><span class="s5">&quot;Total Bill: &quot; </span><span class="s3">+ </span><span class="s1">str</span><span class="s3">(</span><span class="s1">total</span><span class="s3">) + </span><span class="s5">&quot;</span><span class="s2">\n</span><span class="s5">&quot;</span><span class="s3">)</span>
+        <span class="s1">file</span><span class="s3">.</span><span class="s1">write</span><span class="s3">(</span><span class="s5">&quot;Discount: &quot; </span><span class="s3">+ </span><span class="s1">str</span><span class="s3">(</span><span class="s1">discount</span><span class="s3">) + </span><span class="s5">&quot;</span><span class="s2">\n</span><span class="s5">&quot;</span><span class="s3">)</span>
+        <span class="s1">file</span><span class="s3">.</span><span class="s1">write</span><span class="s3">(</span><span class="s5">&quot;Final Bill: &quot; </span><span class="s3">+ </span><span class="s1">str</span><span class="s3">(</span><span class="s1">final_bill</span><span class="s3">) + </span><span class="s5">&quot;</span><span class="s2">\n</span><span class="s5">&quot;</span><span class="s3">)</span>
+        <span class="s1">file</span><span class="s3">.</span><span class="s1">write</span><span class="s3">(</span><span class="s5">&quot;Most Expensive Product: &quot; </span><span class="s3">+ </span><span class="s1">expensive </span><span class="s3">+ </span><span class="s5">&quot;</span><span class="s2">\n</span><span class="s5">&quot;</span><span class="s3">)</span>
+
+    <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;Bill saved in bill.txt&quot;</span><span class="s3">)</span>
+
+
+<span class="s0"># QUESTION 4</span>
+<span class="s2">def </span><span class="s1">calculator</span><span class="s3">():</span>
+    <span class="s2">def </span><span class="s1">add</span><span class="s3">(</span><span class="s1">a</span><span class="s3">, </span><span class="s1">b</span><span class="s3">):</span>
+        <span class="s2">return </span><span class="s1">a </span><span class="s3">+ </span><span class="s1">b</span>
+
+    <span class="s2">def </span><span class="s1">subtract</span><span class="s3">(</span><span class="s1">a</span><span class="s3">, </span><span class="s1">b</span><span class="s3">):</span>
+        <span class="s2">return </span><span class="s1">a </span><span class="s3">- </span><span class="s1">b</span>
+
+    <span class="s2">def </span><span class="s1">multiply</span><span class="s3">(</span><span class="s1">a</span><span class="s3">, </span><span class="s1">b</span><span class="s3">):</span>
+        <span class="s2">return </span><span class="s1">a </span><span class="s3">* </span><span class="s1">b</span>
+
+    <span class="s2">def </span><span class="s1">divide</span><span class="s3">(</span><span class="s1">a</span><span class="s3">, </span><span class="s1">b</span><span class="s3">):</span>
+        <span class="s2">return </span><span class="s1">a </span><span class="s3">/ </span><span class="s1">b</span>
+
+    <span class="s2">def </span><span class="s1">modulus</span><span class="s3">(</span><span class="s1">a</span><span class="s3">, </span><span class="s1">b</span><span class="s3">):</span>
+        <span class="s2">return </span><span class="s1">a </span><span class="s3">% </span><span class="s1">b</span>
+
+    <span class="s2">while True</span><span class="s3">:</span>
+        <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;</span><span class="s2">\n</span><span class="s5">----- Calculator -----&quot;</span><span class="s3">)</span>
+
+        <span class="s1">num1 </span><span class="s3">= </span><span class="s1">float</span><span class="s3">(</span><span class="s1">input</span><span class="s3">(</span><span class="s5">&quot;Enter first number: &quot;</span><span class="s3">))</span>
+        <span class="s1">num2 </span><span class="s3">= </span><span class="s1">float</span><span class="s3">(</span><span class="s1">input</span><span class="s3">(</span><span class="s5">&quot;Enter second number: &quot;</span><span class="s3">))</span>
+
+        <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;+ Addition&quot;</span><span class="s3">)</span>
+        <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;- Subtraction&quot;</span><span class="s3">)</span>
+        <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;* Multiplication&quot;</span><span class="s3">)</span>
+        <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;/ Division&quot;</span><span class="s3">)</span>
+        <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;% Modulus&quot;</span><span class="s3">)</span>
+
+        <span class="s1">operation </span><span class="s3">= </span><span class="s1">input</span><span class="s3">(</span><span class="s5">&quot;Enter operation: &quot;</span><span class="s3">)</span>
+
+        <span class="s2">if </span><span class="s1">operation </span><span class="s3">== </span><span class="s5">&quot;+&quot;</span><span class="s3">:</span>
+            <span class="s1">answer </span><span class="s3">= </span><span class="s1">add</span><span class="s3">(</span><span class="s1">num1</span><span class="s3">, </span><span class="s1">num2</span><span class="s3">)</span>
+        <span class="s2">elif </span><span class="s1">operation </span><span class="s3">== </span><span class="s5">&quot;-&quot;</span><span class="s3">:</span>
+            <span class="s1">answer </span><span class="s3">= </span><span class="s1">subtract</span><span class="s3">(</span><span class="s1">num1</span><span class="s3">, </span><span class="s1">num2</span><span class="s3">)</span>
+        <span class="s2">elif </span><span class="s1">operation </span><span class="s3">== </span><span class="s5">&quot;*&quot;</span><span class="s3">:</span>
+            <span class="s1">answer </span><span class="s3">= </span><span class="s1">multiply</span><span class="s3">(</span><span class="s1">num1</span><span class="s3">, </span><span class="s1">num2</span><span class="s3">)</span>
+        <span class="s2">elif </span><span class="s1">operation </span><span class="s3">== </span><span class="s5">&quot;/&quot;</span><span class="s3">:</span>
+            <span class="s2">if </span><span class="s1">num2 </span><span class="s3">== </span><span class="s4">0</span><span class="s3">:</span>
+                <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;Cannot divide by zero.&quot;</span><span class="s3">)</span>
+                <span class="s2">continue</span>
+            <span class="s1">answer </span><span class="s3">= </span><span class="s1">divide</span><span class="s3">(</span><span class="s1">num1</span><span class="s3">, </span><span class="s1">num2</span><span class="s3">)</span>
+        <span class="s2">elif </span><span class="s1">operation </span><span class="s3">== </span><span class="s5">&quot;%&quot;</span><span class="s3">:</span>
+            <span class="s2">if </span><span class="s1">num2 </span><span class="s3">== </span><span class="s4">0</span><span class="s3">:</span>
+                <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;Cannot use modulus with zero.&quot;</span><span class="s3">)</span>
+                <span class="s2">continue</span>
+            <span class="s1">answer </span><span class="s3">= </span><span class="s1">modulus</span><span class="s3">(</span><span class="s1">num1</span><span class="s3">, </span><span class="s1">num2</span><span class="s3">)</span>
+        <span class="s2">else</span><span class="s3">:</span>
+            <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;Invalid operation.&quot;</span><span class="s3">)</span>
+            <span class="s2">continue</span>
+
+        <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;Result:&quot;</span><span class="s3">, </span><span class="s1">answer</span><span class="s3">)</span>
+
+        <span class="s1">again </span><span class="s3">= </span><span class="s1">input</span><span class="s3">(</span><span class="s5">&quot;Do you want another calculation? (yes/no): &quot;</span><span class="s3">)</span>
+
+        <span class="s2">if </span><span class="s1">again</span><span class="s3">.</span><span class="s1">lower</span><span class="s3">() != </span><span class="s5">&quot;yes&quot;</span><span class="s3">:</span>
+            <span class="s2">break</span>
+
+
+<span class="s0">#QUESTION 5</span>
+<span class="s2">def </span><span class="s1">restaurant</span><span class="s3">():</span>
+    <span class="s1">menu </span><span class="s3">= {</span>
+        <span class="s4">1</span><span class="s3">: [</span><span class="s5">&quot;Burger&quot;</span><span class="s3">, </span><span class="s4">500</span><span class="s3">],</span>
+        <span class="s4">2</span><span class="s3">: [</span><span class="s5">&quot;Pizza&quot;</span><span class="s3">, </span><span class="s4">800</span><span class="s3">],</span>
+        <span class="s4">3</span><span class="s3">: [</span><span class="s5">&quot;Fries&quot;</span><span class="s3">, </span><span class="s4">250</span><span class="s3">],</span>
+        <span class="s4">4</span><span class="s3">: [</span><span class="s5">&quot;Drink&quot;</span><span class="s3">, </span><span class="s4">150</span><span class="s3">]</span>
+    <span class="s3">}</span>
+
+    <span class="s1">orders </span><span class="s3">= []</span>
+    <span class="s1">total </span><span class="s3">= </span><span class="s4">0</span>
+
+    <span class="s2">while True</span><span class="s3">:</span>
+        <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;</span><span class="s2">\n</span><span class="s5">----- Restaurant Menu -----&quot;</span><span class="s3">)</span>
+        <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;1. Burger - Rs. 500&quot;</span><span class="s3">)</span>
+        <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;2. Pizza - Rs. 800&quot;</span><span class="s3">)</span>
+        <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;3. Fries - Rs. 250&quot;</span><span class="s3">)</span>
+        <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;4. Drink - Rs. 150&quot;</span><span class="s3">)</span>
+        <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;5. Finish Order&quot;</span><span class="s3">)</span>
+
+        <span class="s1">choice </span><span class="s3">= </span><span class="s1">int</span><span class="s3">(</span><span class="s1">input</span><span class="s3">(</span><span class="s5">&quot;Select item: &quot;</span><span class="s3">))</span>
+
+        <span class="s2">if </span><span class="s1">choice </span><span class="s3">== </span><span class="s4">5</span><span class="s3">:</span>
+            <span class="s2">break</span>
+
+        <span class="s2">if </span><span class="s1">choice </span><span class="s2">in </span><span class="s1">menu</span><span class="s3">:</span>
+            <span class="s1">quantity </span><span class="s3">= </span><span class="s1">int</span><span class="s3">(</span><span class="s1">input</span><span class="s3">(</span><span class="s5">&quot;Enter quantity: &quot;</span><span class="s3">))</span>
+
+            <span class="s1">name </span><span class="s3">= </span><span class="s1">menu</span><span class="s3">[</span><span class="s1">choice</span><span class="s3">][</span><span class="s4">0</span><span class="s3">]</span>
+            <span class="s1">price </span><span class="s3">= </span><span class="s1">menu</span><span class="s3">[</span><span class="s1">choice</span><span class="s3">][</span><span class="s4">1</span><span class="s3">]</span>
+            <span class="s1">item_total </span><span class="s3">= </span><span class="s1">price </span><span class="s3">* </span><span class="s1">quantity</span>
+
+            <span class="s1">orders</span><span class="s3">.</span><span class="s1">append</span><span class="s3">([</span><span class="s1">name</span><span class="s3">, </span><span class="s1">quantity</span><span class="s3">, </span><span class="s1">item_total</span><span class="s3">])</span>
+            <span class="s1">total </span><span class="s3">+= </span><span class="s1">item_total</span>
+
+            <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;Item added.&quot;</span><span class="s3">)</span>
+        <span class="s2">else</span><span class="s3">:</span>
+            <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;Invalid choice.&quot;</span><span class="s3">)</span>
+
+    <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;</span><span class="s2">\n</span><span class="s5">----- Final Bill -----&quot;</span><span class="s3">)</span>
+
+    <span class="s1">bill </span><span class="s3">= </span><span class="s5">&quot;Restaurant Bill</span><span class="s2">\n\n</span><span class="s5">&quot;</span>
+
+    <span class="s2">for </span><span class="s1">order </span><span class="s2">in </span><span class="s1">orders</span><span class="s3">:</span>
+        <span class="s1">print</span><span class="s3">(</span><span class="s1">order</span><span class="s3">[</span><span class="s4">0</span><span class="s3">], </span><span class="s5">&quot;x&quot;</span><span class="s3">, </span><span class="s1">order</span><span class="s3">[</span><span class="s4">1</span><span class="s3">], </span><span class="s5">&quot;=&quot;</span><span class="s3">, </span><span class="s1">order</span><span class="s3">[</span><span class="s4">2</span><span class="s3">])</span>
+        <span class="s1">bill </span><span class="s3">+= </span><span class="s1">order</span><span class="s3">[</span><span class="s4">0</span><span class="s3">] + </span><span class="s5">&quot; x &quot; </span><span class="s3">+ </span><span class="s1">str</span><span class="s3">(</span><span class="s1">order</span><span class="s3">[</span><span class="s4">1</span><span class="s3">]) + </span><span class="s5">&quot; = Rs. &quot; </span><span class="s3">+ </span><span class="s1">str</span><span class="s3">(</span><span class="s1">order</span><span class="s3">[</span><span class="s4">2</span><span class="s3">]) + </span><span class="s5">&quot;</span><span class="s2">\n</span><span class="s5">&quot;</span>
+
+    <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;Final Bill: Rs.&quot;</span><span class="s3">, </span><span class="s1">total</span><span class="s3">)</span>
+    <span class="s1">bill </span><span class="s3">+= </span><span class="s5">&quot;</span><span class="s2">\n</span><span class="s5">Final Bill: Rs. &quot; </span><span class="s3">+ </span><span class="s1">str</span><span class="s3">(</span><span class="s1">total</span><span class="s3">)</span>
+
+    <span class="s2">with </span><span class="s1">open</span><span class="s3">(</span><span class="s5">&quot;orders.txt&quot;</span><span class="s3">, </span><span class="s5">&quot;w&quot;</span><span class="s3">) </span><span class="s2">as </span><span class="s1">file</span><span class="s3">:</span>
+        <span class="s1">file</span><span class="s3">.</span><span class="s1">write</span><span class="s3">(</span><span class="s1">bill</span><span class="s3">)</span>
+
+    <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;Bill saved in orders.txt&quot;</span><span class="s3">)</span>
+
+
+<span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;Enter the name of task which you want to perform&quot;</span><span class="s3">)</span>
+<span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;Q1 starts at: Student Result Management System&quot;</span><span class="s3">)</span>
+<span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;Q2 starts at: Sentence Analysis&quot;</span><span class="s3">)</span>
+<span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;Q3 starts at: Shopping Program&quot;</span><span class="s3">)</span>
+<span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;Q4 starts at: Calculator&quot;</span><span class="s3">)</span>
+<span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;Q5 starts at: Restaurant Management System&quot;</span><span class="s3">)</span>
+<span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;1. Student Result Management System&quot;</span><span class="s3">)</span>
+<span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;2. Sentence Analysis&quot;</span><span class="s3">)</span>
+<span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;3. Shopping Program&quot;</span><span class="s3">)</span>
+<span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;4. Calculator&quot;</span><span class="s3">)</span>
+<span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;5. Restaurant Management System&quot;</span><span class="s3">)</span>
+
+<span class="s1">choice </span><span class="s3">= </span><span class="s1">input</span><span class="s3">(</span><span class="s5">&quot;Select task (1-5): &quot;</span><span class="s3">)</span>
+
+<span class="s2">if </span><span class="s1">choice </span><span class="s3">== </span><span class="s5">&quot;1&quot;</span><span class="s3">:</span>
+    <span class="s1">student_result</span><span class="s3">()</span>
+<span class="s2">elif </span><span class="s1">choice </span><span class="s3">== </span><span class="s5">&quot;2&quot;</span><span class="s3">:</span>
+    <span class="s1">sentence_analysis</span><span class="s3">()</span>
+<span class="s2">elif </span><span class="s1">choice </span><span class="s3">== </span><span class="s5">&quot;3&quot;</span><span class="s3">:</span>
+    <span class="s1">shopping</span><span class="s3">()</span>
+<span class="s2">elif </span><span class="s1">choice </span><span class="s3">== </span><span class="s5">&quot;4&quot;</span><span class="s3">:</span>
+    <span class="s1">calculator</span><span class="s3">()</span>
+<span class="s2">elif </span><span class="s1">choice </span><span class="s3">== </span><span class="s5">&quot;5&quot;</span><span class="s3">:</span>
+    <span class="s1">restaurant</span><span class="s3">()</span>
+<span class="s2">else</span><span class="s3">:</span>
+    <span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;Invalid choice.&quot;</span><span class="s3">)</span>
+</pre>
+</body>
+</html>
